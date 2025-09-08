@@ -446,34 +446,7 @@ export const servicesData = [
   ]
 }
 ,
-    {
-  "slug": "pilonidal-sinus-surgery",
-  "name": "Pilonidal Sinus Surgery",
-  "description": "Pilonidal sinus surgery is performed to treat a cyst or abscess that develops near the buttock cleft, often containing hair and debris that cause pain and infection. Surgery becomes necessary when conservative treatments fail, with the goal of removing the sinus tract and preventing recurrence. Various surgical techniques are available, ranging from minimally invasive options to flap procedures for complex cases.",
-  "details": {
-    "whenNeeded": "Recommended when pilonidal sinus causes recurrent infection, persistent pain, or does not heal with conservative treatments.",
-    "preparation": "Preoperative evaluation may include clinical examination and imaging. Patients are advised to maintain good hygiene and shave or remove hair in the affected area before surgery.",
-    "rehabilitation": "Recovery depends on the surgical method: laser or endoscopic techniques allow return to activities within a few days, while open excision or flap surgeries may require 2–6 weeks with regular wound care."
-  },
-  "isItCorrectForYou": [
-    "You have a painful or recurrent pilonidal sinus that causes infection or abscess formation.",
-    "Conservative treatments have not resolved your symptoms.",
-    "You prefer a surgical option that minimizes recurrence and promotes long-term healing."
-  ],
-  "benefits": [
-    "Laser and endoscopic procedures are minimally invasive with faster recovery and minimal scarring.",
-    "Flap procedures like Karydakis or Limberg reduce recurrence and improve cosmetic outcomes in complex cases.",
-    "Wide excision ensures complete removal of the sinus and reduces infection risk.",
-    "Modern techniques allow shorter downtime and quicker return to normal activities."
-  ],
-  "challenges": [
-    "Open excision may require prolonged healing and frequent dressing changes.",
-    "Risk of recurrence, especially in deep clefts or complex sinuses.",
-    "Some procedures require advanced surgical expertise.",
-    "Possible complications include infection, bleeding, or delayed wound healing."
-  ]
-}
-,
+   
     {
   "slug": "drainage-perianal-perineal-abscess",
   "name": "Drainage of Perianal & Perineal Abscess",
@@ -846,34 +819,7 @@ export const servicesData = [
   ]
 }
 ,
-    {
-  "slug": "modified-radical-mastectomy",
-  "name": "Modified Radical Mastectomy (Breast Cancer Surgery)",
-  "description": "Modified Radical Mastectomy (MRM) is a surgical procedure for treating breast cancer. It involves removing the entire breast tissue along with the nipple-areola complex and most of the underarm lymph nodes, while preserving the chest muscles for better recovery and function.",
-  "details": {
-    "whenNeeded": "Performed when breast cancer requires complete removal of breast tissue along with lymph nodes to prevent cancer spread.",
-    "preparation": "Preoperative imaging, biopsy, staging investigations, fasting before surgery, and consultation with the oncology team.",
-    "rehabilitation": "Hospital stay is usually 1–3 days. Drains may remain for 1–2 weeks. Physical therapy helps prevent stiffness and swelling. Full recovery may take several weeks."
-  },
-  "isItCorrectForYou": [
-    "You have been diagnosed with breast cancer requiring surgical removal.",
-    "Lump removal alone (lumpectomy) is not sufficient for your cancer stage.",
-    "You are medically fit to undergo major surgery under general anesthesia."
-  ],
-  "benefits": [
-    "Effective removal of cancerous breast tissue and lymph nodes.",
-    "Preserves chest muscles for better arm and shoulder movement.",
-    "Helps guide further treatment through pathological analysis.",
-    "Lower recurrence rates when combined with chemotherapy or radiation."
-  ],
-  "challenges": [
-    "Risk of complications such as lymphedema (arm swelling), infection, or seroma (fluid build-up).",
-    "Possible numbness or nerve injury in the chest or arm.",
-    "Longer recovery compared to breast-conserving surgery.",
-    "Permanent loss of the breast, which may affect body image and emotional health."
-  ]
-}
-,
+  
     {
   "slug": "gynecomastia-surgery",
   "name": "Gynecomastia Surgery (Male Breast Reduction)",
@@ -929,129 +875,6 @@ export const servicesData = [
     "Risk of infection, bleeding, or fluid buildup (seroma).",
     "Scarring, though usually small and well-hidden in natural creases.",
     "Need for follow-up care and possible use of compression garments."
-  ]
-}
-
-  ]
-},
-{
-  id: 8,
-  category: "thyroid-neck-surgeries",
-  name: "Thyroid & Neck Surgeries",
-  description: "Thyroid and neck surgeries are specialized procedures performed to treat a variety of conditions affecting the thyroid gland, lymph nodes, and surrounding neck structures. These surgeries range from removing part or all of the thyroid gland to excising benign or malignant nodules, managing tumors, and addressing enlarged lymph nodes. Our center offers expert surgical care using advanced techniques to ensure optimal outcomes, minimize complications, and preserve vital functions such as voice and calcium regulation.",
-  subSurgeries: [
-    {
-  "slug": "hemithyroidectomy",
-  "name": "Hemithyroidectomy (Partial Thyroid Removal)",
-  "description": "Hemithyroidectomy, also known as thyroid lobectomy or partial thyroidectomy, is a surgical procedure where one lobe of the thyroid gland and part of the isthmus are removed. It is commonly done for localized nodules, early thyroid cancers, or cosmetic reasons. Since only half of the gland is removed, many patients continue to have normal thyroid function without needing lifelong medication.",
-  "details": {
-    "whenNeeded": "Performed when a thyroid nodule, early thyroid cancer, or a unilateral goiter is confined to one side of the thyroid, or for cosmetic removal of visible lumps.",
-    "preparation": "Thyroid function tests, ultrasound, and possibly fine needle aspiration (FNA) biopsy. Fasting 6–8 hours before surgery.",
-    "rehabilitation": "Most patients return to normal activities in 1–2 weeks. Temporary hoarseness or neck discomfort may occur but usually resolve. Regular thyroid function monitoring is needed."
-  },
-  "isItCorrectForYou": [
-    "You have a thyroid nodule or lump confined to one lobe.",
-    "You are diagnosed with early-stage thyroid cancer limited to one side.",
-    "You experience compressive symptoms (difficulty swallowing or breathing) from an enlarged thyroid on one side.",
-    "You want removal of a visible thyroid lump for cosmetic reasons."
-  ],
-  "benefits": [
-    "Removes problematic thyroid tissue while preserving half the gland.",
-    "Lower chance of needing lifelong thyroid hormone replacement compared to total thyroidectomy.",
-    "Smaller incision with minimal scarring.",
-    "Quick recovery, usually within 1–2 weeks."
-  ],
-  "challenges": [
-    "Temporary hoarseness or voice changes due to nerve irritation.",
-    "Risk of injury to the recurrent laryngeal nerve or parathyroid glands.",
-    "Possible need for thyroid hormone replacement if remaining gland is underactive.",
-    "Small chance of recurrence or new nodules developing in the remaining lobe."
-  ]
-}
-,
-    {
-  "slug": "total-thyroidectomy",
-  "name": "Total Thyroidectomy (Complete Thyroid Removal)",
-  "description": "Total thyroidectomy is a surgical procedure where the entire thyroid gland, including both lobes and the connecting isthmus, is removed. It is performed for thyroid cancer, large goiters, Graves’ disease, or other severe thyroid conditions. Because the whole gland is removed, lifelong thyroid hormone replacement is required.",
-  "details": {
-    "whenNeeded": "Performed when thyroid cancer, large or symptomatic goiters, or hyperthyroidism (like Graves’ disease) cannot be managed with medication or less extensive surgery.",
-    "preparation": "Thyroid function tests, ultrasound, fine needle aspiration (FNA) for nodules, sometimes CT/MRI scans. Fasting 6–8 hours before surgery.",
-    "rehabilitation": "Hospital stay of 1–3 days. Lifelong thyroid hormone replacement is required. Most patients recover in 2–3 weeks, with calcium levels monitored for safety."
-  },
-  "isItCorrectForYou": [
-    "You have thyroid cancer requiring complete removal.",
-    "You have a large goiter causing swallowing or breathing issues.",
-    "You have hyperthyroidism not controlled with medicines or radioactive iodine.",
-    "You have recurrent or multifocal thyroid disease affecting both lobes."
-  ],
-  "benefits": [
-    "Removes all diseased thyroid tissue, lowering risk of recurrence.",
-    "Definitive treatment for thyroid cancer and severe thyroid disorders.",
-    "Improves breathing and swallowing in cases of large goiters.",
-    "Provides long-term stability when other treatments have failed."
-  ],
-  "challenges": [
-    "Requires lifelong thyroid hormone replacement.",
-    "Risk of vocal cord nerve injury leading to hoarseness.",
-    "Risk of hypoparathyroidism causing low calcium levels.",
-    "Possible complications such as bleeding, infection, or airway compromise (rare)."
-  ]
-}
-,
-    {
-  "slug": "parathyroid-surgery",
-  "name": "Parathyroid Surgery (Parathyroidectomy)",
-  "description": "Parathyroid surgery involves removing one or more parathyroid glands to restore normal calcium balance in the body. It is most often performed to treat hyperparathyroidism, a condition where overactive glands produce too much parathyroid hormone (PTH), leading to high calcium levels and health issues like bone weakness, kidney stones, and fatigue.",
-  "details": {
-    "whenNeeded": "Recommended when hyperparathyroidism causes high calcium levels, kidney stones, bone loss, or persistent symptoms, often due to a parathyroid adenoma or other gland abnormality.",
-    "preparation": "Blood tests for calcium and PTH, bone density scans, imaging studies (ultrasound, sestamibi scan, or CT) to locate abnormal glands. Fasting 6–8 hours before surgery.",
-    "rehabilitation": "Most patients go home the same day or within 24 hours. Normal activities can resume in a few days, with full recovery in 1–2 weeks. Calcium levels are closely monitored after surgery."
-  },
-  "isItCorrectForYou": [
-    "You have primary hyperparathyroidism due to an overactive gland or adenoma.",
-    "You experience symptoms like bone pain, kidney stones, fatigue, or cognitive issues from high calcium levels.",
-    "Medical treatments for hyperparathyroidism are not effective.",
-    "You have chronic kidney disease with secondary or tertiary hyperparathyroidism requiring surgery."
-  ],
-  "benefits": [
-    "Restores normal calcium levels in the blood.",
-    "Relieves symptoms such as fatigue, bone pain, and kidney problems.",
-    "Reduces long-term risks like osteoporosis and kidney stones.",
-    "Improves quality of life and overall health."
-  ],
-  "challenges": [
-    "Risk of vocal cord nerve injury, which may cause hoarseness.",
-    "Temporary or permanent low calcium levels (hypocalcemia) may occur.",
-    "General surgical risks such as bleeding or infection.",
-    "In rare cases, additional surgery may be needed if abnormal glands are not found initially."
-  ]
-}
-,
-    {
-  "slug": "excision-of-neck-lumps",
-  "name": "Excision of Neck Lumps",
-  "description": "Excision of neck lumps is a surgical procedure performed to remove abnormal swellings or masses in the neck. These lumps may be caused by enlarged lymph nodes, cysts, infections, congenital anomalies, or tumors. The procedure helps in both treatment and diagnosis, especially when cancer is suspected.",
-  "details": {
-    "whenNeeded": "Recommended if a neck lump persists, grows, causes pain, or if malignancy is suspected.",
-    "preparation": "Preoperative imaging (ultrasound, CT, or MRI) to assess size and involvement; fasting 6-8 hours before surgery; medical fitness evaluation.",
-    "rehabilitation": "Mild swelling or discomfort for a few days; return to normal activities within a week; follow-up visits to remove sutures and review pathology results."
-  },
-  "isItCorrectForYou": [
-    "You have a persistent or enlarging neck lump.",
-    "You experience pain, discomfort, or difficulty swallowing due to the lump.",
-    "Your doctor suspects infection, cyst, or tumor and recommends removal for diagnosis."
-  ],
-  "benefits": [
-    "Provides a definitive diagnosis through histopathology.",
-    "Relieves symptoms such as discomfort, pain, or swallowing issues.",
-    "Minimizes risk of complications from infection, rupture, or malignant growth.",
-    "Often performed with minimal scarring using natural skin creases."
-  ],
-  "challenges": [
-    "Risks of bleeding, infection, or temporary swelling at the surgical site.",
-    "Possibility of injury to nearby nerves or blood vessels depending on lump location.",
-    "May require general anesthesia in most cases.",
-    "Follow-up required to discuss pathology results and guide further treatment."
   ]
 }
 
@@ -1117,56 +940,7 @@ export const servicesData = [
     "Requires careful monitoring and antibiotics."
   ]
 },
-    {
-  slug: "liver-resection",
-  name: "Liver Resection (Hepatectomy)",
-  description: "Liver resection, or hepatectomy, is a surgical procedure to remove a portion of the liver affected by cancer, tumors, or severe damage. Since the liver has the unique ability to regenerate, patients can often recover well after removal of diseased tissue.",
-  details: {
-    whenNeeded: "Indicated for liver cancer, metastases, or benign tumors causing symptoms.",
-    preparation: "CT/MRI scans, blood tests for liver function, fasting before surgery.",
-    rehabilitation: "Hospital stay of 5-7 days, full recovery may take 6-8 weeks."
-  },
-  isItCorrectForYou: [
-    "You have liver cancer or tumors confined to one part of the liver.",
-    "Your liver function is strong enough to handle surgery.",
-    "You are otherwise healthy for major surgery."
-  ],
-  benefits: [
-    "Curative option for liver cancer or tumors.",
-    "Preserves healthy liver tissue that can regenerate.",
-    "Improves long-term survival in selected cases."
-  ],
-  challenges: [
-    "Major surgery with longer recovery.",
-    "Risk of bleeding, bile leakage, or infection.",
-    "Not suitable for patients with poor liver function or cirrhosis."
-  ]
-},
-    {
-  slug: "pancreatic-surgery",
-  name: "Pancreatic Surgery",
-  description: "Pancreatic surgery involves procedures to treat pancreatic cancer, cysts, chronic pancreatitis, or trauma. The type of surgery depends on the condition, ranging from removal of part of the pancreas to complex operations like the Whipple procedure.",
-  details: {
-    whenNeeded: "Performed for pancreatic tumors, severe chronic pancreatitis, or cysts causing complications.",
-    preparation: "CT/MRI scans, blood work, nutritional assessment, and fasting before surgery.",
-    rehabilitation: "Hospital stay of 1-2 weeks, with full recovery taking several weeks to months depending on the procedure."
-  },
-  isItCorrectForYou: [
-    "You have a pancreatic tumor or cyst that requires removal.",
-    "You suffer from chronic pancreatitis not controlled with medication.",
-    "Your condition affects digestion or causes severe pain."
-  ],
-  benefits: [
-    "Can remove tumors and improve survival.",
-    "Relieves severe pain from pancreatitis.",
-    "Restores digestive function in some cases."
-  ],
-  challenges: [
-    "Complex surgery with risks of bleeding and infection.",
-    "Potential long-term effects on digestion and blood sugar control.",
-    "Longer hospital stay and recovery period."
-  ]
-}
+  
   ]
 },
   {
@@ -1175,6 +949,34 @@ export const servicesData = [
   name: "Other Surgeries",
   description: "Other Surgeries include small but essential procedures such as abscess drainage, cyst or lipoma removal, circumcision, varicose vein treatment, and hydrocele surgery. These are usually quick, safe, and performed under local or short anesthesia. Patients can expect a small incision, simple treatment of the problem, and quick recovery with minimal scars. Most people go home the same day and return to daily activities within a few days.",
   subSurgeries: [
+     {
+  "slug": "pilonidal-sinus-surgery",
+  "name": "Pilonidal Sinus Surgery",
+  "description": "Pilonidal sinus surgery is performed to treat a cyst or abscess that develops near the buttock cleft, often containing hair and debris that cause pain and infection. Surgery becomes necessary when conservative treatments fail, with the goal of removing the sinus tract and preventing recurrence. Various surgical techniques are available, ranging from minimally invasive options to flap procedures for complex cases.",
+  "details": {
+    "whenNeeded": "Recommended when pilonidal sinus causes recurrent infection, persistent pain, or does not heal with conservative treatments.",
+    "preparation": "Preoperative evaluation may include clinical examination and imaging. Patients are advised to maintain good hygiene and shave or remove hair in the affected area before surgery.",
+    "rehabilitation": "Recovery depends on the surgical method: laser or endoscopic techniques allow return to activities within a few days, while open excision or flap surgeries may require 2–6 weeks with regular wound care."
+  },
+  "isItCorrectForYou": [
+    "You have a painful or recurrent pilonidal sinus that causes infection or abscess formation.",
+    "Conservative treatments have not resolved your symptoms.",
+    "You prefer a surgical option that minimizes recurrence and promotes long-term healing."
+  ],
+  "benefits": [
+    "Laser and endoscopic procedures are minimally invasive with faster recovery and minimal scarring.",
+    "Flap procedures like Karydakis or Limberg reduce recurrence and improve cosmetic outcomes in complex cases.",
+    "Wide excision ensures complete removal of the sinus and reduces infection risk.",
+    "Modern techniques allow shorter downtime and quicker return to normal activities."
+  ],
+  "challenges": [
+    "Open excision may require prolonged healing and frequent dressing changes.",
+    "Risk of recurrence, especially in deep clefts or complex sinuses.",
+    "Some procedures require advanced surgical expertise.",
+    "Possible complications include infection, bleeding, or delayed wound healing."
+  ]
+}
+,
     {
   slug: "abscess-drainage",
   name: "Abscess Drainage",

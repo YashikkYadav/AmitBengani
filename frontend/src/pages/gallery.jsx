@@ -3,9 +3,9 @@ import { useState } from "react";
 
 const galleryData = {
   opd: [
-    "/about10.jpg",
-    "/about20.jpg",
-    "/about30.jpg",
+    "/about1.jpg",
+    "/about2.jpg",
+    "/about3.jpg",
   ],
   events: [
     "/cert1.jpeg",
@@ -17,6 +17,9 @@ const galleryData = {
     "/gallery/story1.jpg",
     "/gallery/story2.jpg",
     "/gallery/story3.jpg",
+    "/gallery/story4.jpg",
+    "/gallery/story5.jpg",
+    "/gallery/story6.jpg",
   ],
 };
 
@@ -59,12 +62,12 @@ export default function GalleryPage() {
         {galleryData[activeTab].map((img, index) => (
           <div
             key={index}
-            className="relative group rounded-xl overflow-hidden shadow hover:shadow-lg hover:scale-105 hover:border-2 hover:border-[#0089FF] transition transform bg-white"
+            className="relative group rounded-xl overflow-hidden shadow hover:shadow-lg border-2 border-transparent hover:border-[#0089FF] transition bg-white"
           >
             <img
               src={img}
               alt="Gallery"
-              className="w-full h-64 object-contain group-hover:opacity-90 transition"
+              className="w-full rounded-xl h-64 transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 transition"></div>
           </div>

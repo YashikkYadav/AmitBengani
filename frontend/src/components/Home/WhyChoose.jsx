@@ -6,7 +6,7 @@ const WhyChoose = () => {
     {
       icon: <FaUserMd className="text-[#0089FF] text-4xl" />,
       title: "Years of Expertise",
-      desc: "Dr. Amit brings over 15+ years of surgical experience with a proven track record of successful treatments.",
+      desc: "Dr. Amit brings over 20+ years of surgical experience with a proven track record of successful treatments.",
     },
     {
       icon: <FaStar className="text-yellow-500 text-4xl" />,

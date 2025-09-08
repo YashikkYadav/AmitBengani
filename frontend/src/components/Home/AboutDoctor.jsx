@@ -37,7 +37,8 @@ const AboutDoctor = () => {
         <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Fellowship in Laparoscopic Surgery
       </li>
       <li className="flex items-start">
-        <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Specialized Training in Proctology
+        <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Minimally Invasive proctology 
+
       </li>
     </ul>
   </div>
@@ -52,10 +53,11 @@ const AboutDoctor = () => {
         <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> 20+ years in advanced surgical care
       </li>
       <li className="flex items-start">
-        <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Performed 20,000+ successful procedures
+        <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Performed 35,000+ successful procedures
       </li>
       <li className="flex items-start">
-        <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Renowned in piles, fissures & fistula treatment
+        <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Renowned in Basic and Advanced laparoscopic surgeries
+
       </li>
     </ul>
   </div>

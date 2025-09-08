@@ -84,7 +84,7 @@ export default function Footer() {
       className="flex items-start gap-2 md:justify-start hover:text-[#0089FF] transition"
     >
       <FaMapMarkerAlt className="text-[#0089FF] text-xl" />
-      1st floor, 28 Shiv Shakti Nagar, near Indo Bharat School, Nirman Nagar, Jaipur, Rajasthan 302019
+      1st floor, 28 Shiv Shakti Nagar, Near Indo Bharat School, Nirman Nagar, Jaipur, Rajasthan 302019
     </a>
 
     {/* Phone */}

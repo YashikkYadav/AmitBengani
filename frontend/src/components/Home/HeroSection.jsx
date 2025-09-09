@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="relative bg-gradient-to-r from-[#E6F3FF] via-[#CCE9FF] to-[#99D0FF]">
       <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 items-center gap-12">
         {/* Left Content */}
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-left animate-heroFadeInUp" style={{ animationDelay: '100ms', animationFillMode: 'both' }}>
           <p className="text-[#0089FF] font-semibold uppercase tracking-wide">
             Expert Hands, Faster Healing
           </p>
@@ -31,7 +31,7 @@ Best General & Laparoscopic Surgeon in Jaipur
         </div>
 
         {/* Right Image */}
-        <div className="relative flex justify-center">
+        <div className="relative flex justify-center animate-heroFadeInScale" style={{ animationDelay: '300ms', animationFillMode: 'both' }}>
           <div className="absolute -z-10 w-80 h-80 bg-[#B3E6FF] rounded-full blur-3xl opacity-40"></div>
           <img
             src="/jain2.png"
@@ -40,6 +40,24 @@ Best General & Laparoscopic Surgeon in Jaipur
           />
         </div>
       </div>
+
+      {/* Add keyframes for hero animations */}
+      <style jsx global>{`
+@keyframes heroFadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-heroFadeInUp {
+  animation: heroFadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes heroFadeInScale {
+  0% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-heroFadeInScale {
+  animation: heroFadeInScale 1.1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+`}</style>
     </section>
   );
 }

@@ -15,6 +15,7 @@ export default function Header() {
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobilePagesOpen, setMobilePagesOpen] = useState(false);
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null);
 
   return (
@@ -33,6 +34,13 @@ export default function Header() {
           <Link href="/about" className="hover:text-[#0089FF] transition">
             About
           </Link>
+           <Link
+      href="/#surgeries"
+      className="hover:text-[#0089FF] transitio"
+    >
+      Surgeries
+    </Link>
+
         
      
 
@@ -47,7 +55,7 @@ export default function Header() {
   }}
 >
   <span className="hover:text-[#0089FF] transition flex items-center">
-    Services
+    Our Services
     <FiChevronDown
       className={`ml-1 transition-transform duration-300 ${
         openDropdown === "service" ? "rotate-180" : "rotate-0"
@@ -172,6 +180,12 @@ export default function Header() {
     >
       About
     </Link>
+    <Link
+      href="/#surgeries"
+      className="block hover:bg-blue-50 rounded-md px-2 transition"
+    >
+      Surgeries
+    </Link>
 
     {/* Services Toggle (Mobile) */}
     <div>
@@ -179,7 +193,7 @@ export default function Header() {
         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
         className="flex justify-between items-center w-full font-medium px-2 py-2 hover:bg-blue-50 rounded-md transition"
       >
-        <span>Services</span>
+        <span>Our Services</span>
         <FiChevronDown
           className={`transition-transform ${
             mobileServicesOpen ? "rotate-180" : "rotate-0"
@@ -190,28 +204,62 @@ export default function Header() {
       {mobileServicesOpen && (
         <div className="ml-4 mt-2 space-y-2">
           {servicesData.map((category, i) => (
-            <Link
-              key={i}
-              href={`/surgeries/${category.category}`}
-              className="flex justify-between items-center w-full text-left px-2 py-1 rounded-md transition hover:bg-blue-100"
-            >
-              {category.name}
-              <FiChevronRight />
-            </Link>
+            <div key={i}>
+              <button
+                onClick={() => setMobileSubmenuOpen(mobileSubmenuOpen === category.category ? null : category.category)}
+                className="flex justify-between items-center w-full text-left px-2 py-1 rounded-md transition hover:bg-blue-100 font-medium"
+              >
+                <span>{category.name}</span>
+                <FiChevronRight className={`transition-transform ${mobileSubmenuOpen === category.category ? 'rotate-90' : ''}`} />
+              </button>
+              {mobileSubmenuOpen === category.category && (
+                <div className="ml-4 mt-1 space-y-1">
+                  {category.subSurgeries.map((sub, j) => (
+                    <Link
+                      key={j}
+                      href={`/surgery/${category.category}/${sub.slug}`}
+                      className="block px-2 py-1 rounded-md transition hover:bg-blue-100 text-sm"
+                    >
+                      {sub.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       )}
     </div>
 
-    {/* Pages */}
-    <div className="space-y-2">
-      <p className="font-medium">Pages</p>
-      <Link
-        href="/blogs"
-        className="block ml-4 hover:bg-blue-100 rounded-md px-2 transition"
+    {/* Pages Toggle (Mobile) */}
+    <div>
+      <button
+        onClick={() => setMobilePagesOpen(!mobilePagesOpen)}
+        className="flex justify-between items-center w-full font-medium px-2 py-2 hover:bg-blue-50 rounded-md transition"
       >
-        Blogs
-      </Link>
+        <span>Pages</span>
+        <FiChevronDown
+          className={`transition-transform ${
+            mobilePagesOpen ? "rotate-180" : "rotate-0"
+          }`}
+        />
+      </button>
+      {mobilePagesOpen && (
+        <div className="ml-4 mt-2 space-y-2">
+          <Link
+            href="/blogs"
+            className="block px-2 py-1 rounded-md transition hover:bg-blue-100"
+          >
+            Blogs
+          </Link>
+          <Link
+            href="/gallery"
+            className="block px-2 py-1 rounded-md transition hover:bg-blue-100"
+          >
+            Gallery & Media
+          </Link>
+        </div>
+      )}
     </div>
 
     {/* Login / Signup Buttons */}

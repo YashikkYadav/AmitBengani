@@ -79,13 +79,17 @@ export default function DoctorProfile() {
               <FaStethoscope className="text-[#0089FF] mr-2" /> Memberships
             </h3>
             <ul className="list-disc list-inside text-gray-600 mt-2 text-sm space-y-1 text-left">
-              <li>Association of Surgeons of India (ASI)</li>
-              <li>Indian Medical Association (IMA)</li>
-              <li>Other reputed medical societies</li>
+              <li>
+                IAGES (Indian Association of Gastrointestinal Endo Surgeons)
+              </li>
+              <li>
+                AMASI (Association of Minimal Access Surgeons of India)
+              </li>
+              <li>
+                HSI (Hernia Society of India)
+              </li>
             </ul>
           </div>
-
-          {/* Awards */}
           <div className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105">
             <h3 className="flex justify-center items-center text-lg font-semibold text-gray-800">
               <FaAward className="text-[#0089FF] mr-2" /> Awards & Recognitions

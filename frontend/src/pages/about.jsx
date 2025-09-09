@@ -53,7 +53,7 @@ export default function About() {
             </h2>
           </div>
           <p className="text-gray-600 max-w-full">
-With over 20+ years of experience and 20,000+ successful surgeries, Dr. Amit Bengani Jain is recognized as the trusted expert in General and Laparoscopic Surgery in Jaipur. At VS MediHub, Nirman Nagar, he provides advanced, minimally invasive treatments for conditions like hernia, piles, and gallbladder stones with utmost care and precision.
+With over 20+ years of experience and 35,000+ successful surgeries, Dr. Amit Bengani Jain is recognized as the trusted expert in General and Laparoscopic Surgery in Jaipur. He provides advanced, minimally invasive treatments for conditions like hernia, piles, and gallbladder stones with utmost care and precision.
 
 Dr. Amit Bengani Jain and his dedicated medical team are committed to providing compassionate, patient-centered care, ensuring every patient and their loved ones feel protected and informed throughout their surgical journey.
           </p>
@@ -80,7 +80,7 @@ Dr. Amit Bengani Jain and his dedicated medical team are committed to providing 
         {/* Stats with blue theme */}
 <div className="flex flex-wrap justify-center gap-8 text-center">
   {[
-    { target: 22000, label: "Successfull Surgeries", suffix: "+" },
+    { target: 35000, label: "Successfull Surgeries", suffix: "+" },
     { target: 22, label: "Surgical Experience", suffix: "+" },
     { target: 1000, label: "Patients Treated", suffix: "+" },
   ].map((item, i) => (

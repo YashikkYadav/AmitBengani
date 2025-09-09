@@ -7,13 +7,13 @@ export default function Hero() {
         {/* Left Content */}
         <div className="text-center md:text-left">
           <p className="text-[#0089FF] font-semibold uppercase tracking-wide">
-            EXPERT SURGERY, ALWAYS
+            Expert Hands, Faster Healing
           </p>
           <h1 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
 Best General & Laparoscopic Surgeon in Jaipur
           </h1>
-          <p className="mt-6 text-gray-700 max-w-lg mx-auto md:mx-0">
-            Dr. Amit Bengani provides advanced treatments for hernia, piles, gallbladder stones, and more. Honest guidance, patient comfort, and safe recovery every step of the way
+         <p className="mt-6 text-gray-700 max-w-lg mx-auto md:mx-0">
+            Dr. Amit Bengani provides advanced treatments for hernia, piles, gallbladder stones, appendicitis, fissure, fistula, varicose veins, hydrocele, and more. He is known for honest guidance, patient comfort, and ensuring a safe recovery every step of the way.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

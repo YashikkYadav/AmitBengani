@@ -3,12 +3,12 @@ import Link from "next/link";
 import { FaStethoscope, FaHeartbeat, FaProcedures, FaUserMd } from "react-icons/fa";
 
 const diseases = [
+  { name: "Gallstones", slug: "/treatments/gallstones", icon: <FaStethoscope /> },
+  { name: "Appendicitis", slug: "/treatments/appendicitis", icon: <FaHeartbeat /> },
+  { name: "Hernia", slug: "/treatments/hernia", icon: <FaUserMd /> },
   { name: "Piles", slug: "/treatments/piles", icon: <FaStethoscope /> },
   { name: "Fissure", slug: "/treatments/fissure", icon: <FaHeartbeat /> },
   { name: "Fistula", slug: "/treatments/fistula", icon: <FaProcedures /> },
-  { name: "Hernia", slug: "/treatments/hernia", icon: <FaUserMd /> },
-  { name: "Gallstones", slug: "/treatments/gallstones", icon: <FaStethoscope /> },
-  { name: "Appendicitis", slug: "/treatments/appendicitis", icon: <FaHeartbeat /> },
   { name: "Varicose Veins", slug: "/treatments/varicose-veins", icon: <FaProcedures /> },
   { name: "Hydrocele", slug: "/treatments/hydrocele", icon: <FaUserMd /> },
 ];

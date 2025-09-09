@@ -7,7 +7,7 @@ export default function Hero() {
         {/* Left Content */}
         <div className="text-center md:text-left">
           <p className="text-[#0089FF] font-semibold uppercase tracking-wide">
-            EXPERT SURGERY, ALWAYS
+            Expert Hands, Faster Healing
           </p>
           <h1 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
 Best General & Laparoscopic Surgeon in Jaipur

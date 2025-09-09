@@ -152,7 +152,7 @@ export default function Header() {
             href="/contact"
             className="bg-gradient-to-r from-[#0089FF] to-[#005FCC] text-white px-5 py-2.5 rounded-lg shadow-md hover:scale-105 transition-transform"
           >
-            Contact Us
+            Book Apointment
           </Link>
         </div>
 
@@ -268,7 +268,7 @@ export default function Header() {
         href="/contact"
         className="flex-1 text-center bg-gradient-to-r from-[#0089FF] to-[#005FCC] text-white px-3 py-2 rounded-lg hover:opacity-90 transition"
       >
-        Contact
+        Book Apointment
       </Link>
     </div>
   </div>

@@ -52,23 +52,23 @@ export default function SubSurgeryDetail() {
     <section className="max-w-5xl mx-auto px-6 py-12">
       {/* Heading & Description */}
       <div className="mb-12">
-        <h1 className="text-4xl text-center md:text-4xl font-extrabold text-gray-900">
+        <h1 className="text-4xl text-center md:text-4xl font-extrabold text-gray-900 animate-fadeInUp opacity-0">
           {subSurgery.name}
         </h1>
-        <div className="mt-3 w-20 h-1 bg-blue-600 mx-auto rounded-full" />
-        <p className="mt-6 text-center text-lg md:text-xl text-gray-600 leading-relaxed">
+        <div className="mt-3 w-20 h-1 bg-blue-600 mx-auto rounded-full animate-fadeInUp opacity-0 [animation-delay:0.1s]" />
+        <p className="mt-6 text-center text-lg md:text-xl text-gray-600 leading-relaxed animate-fadeInUp opacity-0 [animation-delay:0.2s]">
           {subSurgery.description}
         </p>
       </div>
 
       {/* Info Cards */}
-      <div className="grid md:grid-cols-3 gap-6 mb-12">
+      <div className="grid md:grid-cols-3 gap-6 mb-12 animate-fadeInUp opacity-0 [animation-delay:0.3s]">
         {cards.map((card, idx) => (
           <div
             key={idx}
-            className="bg-white shadow-lg rounded-2xl p-6 border border-gray-200
+            className={`bg-white shadow-lg rounded-2xl p-6 border border-gray-200
                        hover:border-blue-500 hover:shadow-xl hover:shadow-blue-100
-                       transform hover:-translate-y-1 transition-all duration-300"
+                       transform hover:-translate-y-1 transition-all duration-300 animate-fadeInScale opacity-0 [animation-delay:${0.4 + idx * 0.07}s]`}
           >
             <div className="flex items-center gap-3 mb-4">
               {card.icon}
@@ -95,7 +95,7 @@ export default function SubSurgeryDetail() {
           <span className="font-semibold">Phone:</span> +91 96440 32229
         </p>
         <p className="text-gray-700 mb-2">
-          <span className="font-semibold">Address:</span> VS MediHUB, 1st Floor,
+          <span className="font-semibold">Address:</span> 1st Floor,
           28 Shiv Shakti Nagar, near Indo Bharat School, Nirman Nagar, Jaipur,
           Rajasthan 302019
         </p>

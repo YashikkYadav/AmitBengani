@@ -17,7 +17,7 @@ export default function MyApp({ Component, pageProps }) {
         href="https://wa.me/919644032229" // Replace with your WhatsApp number in international format
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50"
+        className="fixed bottom-5 right-5 bg-gradient-to-r from-[#0089FF] to-[#005FCC] text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50"
       >
         <FaWhatsapp size={28} />
       </a>

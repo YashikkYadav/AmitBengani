@@ -1,14 +1,14 @@
 // src/data/blogsData.js
 export const blogsData = [
-  {
-    id: 1,
-    date: "25 Oct",
-    title: "What is the Cost of Gallbladder Surgery in Jaipur?",
-    slug: "what-is-the-cost-of-gallbladder-surgery-in-jaipur",
-    description:
-      "Learn about the factors affecting gallbladder surgery costs in Jaipur, including hospital type, surgeon experience, and recovery expenses.",
-    image: "/about1.jpg",
-  },
+  // {
+  //   id: 1,
+  //   date: "25 Oct",
+  //   title: "What is the Cost of Gallbladder Surgery in Jaipur?",
+  //   slug: "what-is-the-cost-of-gallbladder-surgery-in-jaipur",
+  //   description:
+  //     "Learn about the factors affecting gallbladder surgery costs in Jaipur, including hospital type, surgeon experience, and recovery expenses.",
+  //   image: "/about1.jpg",
+  // },
   // {
   //   id: 2,
   //   date: "25 Oct",

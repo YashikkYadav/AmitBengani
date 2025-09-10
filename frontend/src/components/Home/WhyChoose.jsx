@@ -1,5 +1,7 @@
+
 import { FaUserMd, FaStar, FaMicroscope } from "react-icons/fa";
 import { MdGroups } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const WhyChoose = () => {
   const factors = [
@@ -26,29 +28,60 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <motion.section className="py-16 bg-gray-50"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+    >
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.6 }}
+        >
           Why Choose <span className="text-[#0089FF]">Dr. Amit</span>?
-        </h2>
-        <div className="w-20 h-1 bg-[#0089FF] mx-auto mb-10"></div>
+        </motion.h2>
+        <motion.div
+          className="w-20 h-1 bg-[#0089FF] mx-auto mb-10"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          style={{ originX: 0.5 }}
+        />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.15 } },
+          }}
+        >
           {factors.map((factor, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:border-[#0089FF] hover:shadow-[#0089FF]/30"
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              }}
             >
               {factor.icon}
               <h3 className="mt-4 text-xl font-semibold text-gray-800">
                 {factor.title}
               </h3>
               <p className="mt-2 text-gray-600 text-sm">{factor.desc}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body className="antialiased">
-        <Main />
+        <Main className='scroll-smooth'/>
         <NextScript />
       </body>
     </Html>

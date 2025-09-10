@@ -1,8 +1,9 @@
+
 "use client";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
+import { motion } from "framer-motion";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -19,15 +20,32 @@ const SurgeryActivities = () => {
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <motion.section className="py-12 bg-white"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <p className="text-sm uppercase tracking-widest text-[#0089FF] font-semibold">
+        <motion.p
+          className="text-sm uppercase tracking-widest text-[#0089FF] font-semibold"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.5 }}
+        >
           Have a Look At
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-8">
+        </motion.p>
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.6 }}
+        >
           Our Surgeries and OT <br /> Latest Activities
-        </h2>
+        </motion.h2>
 
         {/* Carousel */}
         <Swiper
@@ -46,19 +64,25 @@ const SurgeryActivities = () => {
         >
           {images.map((src, i) => (
             <SwiperSlide key={i}>
-              <div className="relative w-full h-72 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+              <motion.div
+                className="relative w-full h-72 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
                 <Image
                   src={src}
                   alt={`Activity ${i + 1}`}
                   fill
                   className="object-contain rounded-xl"
                 />
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

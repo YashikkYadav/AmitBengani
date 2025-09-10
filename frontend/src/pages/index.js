@@ -1,5 +1,3 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Hero from '@/components/Home/HeroSection'
 import AboutDoctor from '@/components/Home/AboutDoctor';
 import DiseasesGrid from '@/components/Home/DiseasesGrid';
@@ -9,8 +7,7 @@ import TestimonialCarousel from '@/components/Home/TestimonialCarousel';
 import FaqSection from '@/components/Home/FaqSection';
 import WhyChoose from '@/components/Home/WhyChoose';
 
-
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Hero/>
@@ -21,9 +18,8 @@ export default function Home() {
       <WhyChoose/>
       <TestimonialCarousel/>
       <FaqSection/>
-
-
-
     </>
   );
 }
+
+export default Home

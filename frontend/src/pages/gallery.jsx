@@ -30,14 +30,14 @@ export default function GalleryPage() {
     <section className="bg-gray-100 py-12 mb-10">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-6 text-center mb-10">
-        <h1 className="text-4xl font-bold text-gray-800">Gallery & Media</h1>
-        <p className="text-gray-600 mt-2">
+        <h1 className="text-4xl font-bold text-gray-800 animate-fadeInUp opacity-0">Gallery & Media</h1>
+        <p className="text-gray-600 mt-2 animate-fadeInUp opacity-0 [animation-delay:0.1s]">
           Explore our work, events, and real patient transformations.
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-center gap-4 mb-10">
+      <div className="flex justify-center gap-4 mb-10 animate-fadeInUp opacity-0 [animation-delay:0.2s]">
         {[
           { key: "opd", label: "Doctor in OPD / Surgery" },
           { key: "events", label: "Certifications" },
@@ -58,16 +58,16 @@ export default function GalleryPage() {
       </div>
 
       {/* Gallery Grid */}
-      <div className="max-w-7xl  mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="max-w-7xl  mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fadeInUp opacity-0 [animation-delay:0.3s]">
         {galleryData[activeTab].map((img, index) => (
           <div
             key={index}
-            className="relative group rounded-xl overflow-hidden shadow hover:shadow-lg border-2 border-transparent hover:border-[#0089FF] transition bg-white"
+            className={`relative group rounded-xl overflow-hidden shadow hover:shadow-lg border-2 border-transparent hover:border-[#0089FF] transition bg-white animate-fadeInScale opacity-0 [animation-delay:${0.4 + index * 0.07}s]`}
           >
             <img
               src={img}
               alt="Gallery"
-              className="w-full rounded-xl h-64 transition-transform duration-300 group-hover:scale-105"
+              className="w-full rounded-xl h-60 object-cover object-top transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 transition"></div>
           </div>

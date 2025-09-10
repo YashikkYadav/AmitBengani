@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="relative bg-gradient-to-r from-[#E6F3FF] via-[#CCE9FF] to-[#99D0FF]">
       <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 items-center gap-12">
         {/* Left Content */}
-        <div className="text-center md:text-left">
+  <div className="text-center md:text-left animate-fadeInUp opacity-0" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
           <p className="text-[#0089FF] font-semibold uppercase tracking-wide">
             Expert Hands, Faster Healing
           </p>
@@ -19,7 +19,7 @@ Best General & Laparoscopic Surgeon in Jaipur
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link href='/contact'>
             <button className="bg-gradient-to-r from-[#0089FF] to-[#005FCC] hover:scale-105 transition-transform text-white font-semibold px-7 py-3 rounded-lg shadow-lg">
-              Contact Us
+             Book Apointment
             </button>
             </Link>
             <Link href='/about'>
@@ -31,7 +31,7 @@ Best General & Laparoscopic Surgeon in Jaipur
         </div>
 
         {/* Right Image */}
-        <div className="relative flex justify-center">
+  <div className="relative flex justify-center animate-fadeInScale opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
           <div className="absolute -z-10 w-80 h-80 bg-[#B3E6FF] rounded-full blur-3xl opacity-40"></div>
           <img
             src="/jain2.png"
@@ -40,6 +40,8 @@ Best General & Laparoscopic Surgeon in Jaipur
           />
         </div>
       </div>
+
+
     </section>
   );
 }

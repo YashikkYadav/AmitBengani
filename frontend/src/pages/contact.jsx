@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import LocationCard from "@/components/LocationCard";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -58,7 +59,7 @@ export default function Contact() {
     <FaMapMarkerAlt className="mx-auto text-4xl text-[#0076BC] mb-3" />
     <h3 className="font-semibold text-lg">Our Address</h3>
     <p className="text-gray-600 mt-1">
-      1st floor, 28 Shiv Shakti Nagar, near Indo Bharat School, Nirman Nagar, Jaipur, Rajasthan 302019
+      1st floor, 28 Shiv Shakti Nagar, Near Indo Bharat School, Nirman Nagar, Jaipur, Rajasthan 302019
     </p>
   </a>
 
@@ -201,6 +202,15 @@ export default function Contact() {
             Send Message
           </button>
         </form>
+      </section>
+
+      <section className="max-w-3xl mx-auto px-6 py-10">
+        <LocationCard 
+          title="Dr Amit Bengani Jain"
+          address="1st floor, 28 Shiv Shakti Nagar, near Indo Bharat School, Nirman Nagar, Jaipur, Rajasthan 302019"
+          timing="9 AM to 8 PM (BY APPOINTMENT Except Sunday)"
+          mapSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.542086181923!2d75.7537574!3d26.886286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5bb837643bd%3A0x6526a14c1938214a!2sDr.%20Amit%20Bengani%20jain!5e0!3m2!1sen!2sin!4v1757406558816!5m2!1sen!2sin"/>
+
       </section>
     </div>
   );

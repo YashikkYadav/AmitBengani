@@ -3,3 +3,20 @@
 .slick-prev:before, .slick-next:before {
   color: #0d9488 !important; /* teal arrows */
 }
+
+
+ @keyframes fadeInUp {
+          0% { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+        }
+        @keyframes fadeInScale {
+          0% { opacity: 0; transform: scale(0.95); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        .animate-fadeInScale {
+          animation: fadeInScale 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+        }
+

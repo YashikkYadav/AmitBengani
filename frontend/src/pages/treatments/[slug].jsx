@@ -20,18 +20,18 @@ export default function DiseaseDetail() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
       {/* Title */}
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center md:text-left">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center md:text-left animate-fadeInUp opacity-0">
         {disease.title}
       </h1>
 
       {/* Description + Image */}
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-10">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-10 animate-fadeInUp opacity-0 [animation-delay:0.1s]">
         {/* Description */}
         <div className="flex-1 space-y-4">
           {descriptionParagraphs.map((para, i) => (
             <p
               key={i}
-              className="text-base sm:text-lg text-gray-600 leading-relaxed"
+              className="text-base sm:text-lg text-gray-600 leading-relaxed animate-fadeInUp opacity-0 [animation-delay:0.15s]"
             >
               {para}
             </p>
@@ -42,13 +42,13 @@ export default function DiseaseDetail() {
         <img
           src="/dummyblog.jpg"
           alt={disease.title}
-          className="w-full md:w-[400px] h-auto rounded-lg shadow"
+          className="w-full md:w-[400px] h-auto rounded-lg shadow animate-fadeInScale opacity-0 [animation-delay:0.2s]"
         />
       </div>
 
       {/* Symptoms */}
-      <h2 className="text-xl sm:text-2xl font-semibold mb-4">Symptoms</h2>
-      <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8 pl-2 sm:pl-4">
+      <h2 className="text-xl sm:text-2xl font-semibold mb-4 animate-fadeInUp opacity-0 [animation-delay:0.25s]">Symptoms</h2>
+      <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8 pl-2 sm:pl-4 animate-fadeInUp opacity-0 [animation-delay:0.3s]">
         {disease.symptoms.map((symptom, i) => (
           <li key={i} className="text-sm sm:text-base">
             {symptom}
@@ -57,10 +57,10 @@ export default function DiseaseDetail() {
       </ul>
 
       {/* Treatments */}
-      <h2 className="text-xl sm:text-2xl font-semibold mb-4">
+      <h2 className="text-xl sm:text-2xl font-semibold mb-4 animate-fadeInUp opacity-0 [animation-delay:0.35s]">
         Treatments Available
       </h2>
-      <ul className="list-disc list-inside space-y-2 text-gray-700 mb-10 pl-2 sm:pl-4">
+      <ul className="list-disc list-inside space-y-2 text-gray-700 mb-10 pl-2 sm:pl-4 animate-fadeInUp opacity-0 [animation-delay:0.4s]">
         {disease.treatments.map((treat, i) => (
           <li key={i} className="text-sm sm:text-base">
             {treat}
@@ -69,7 +69,7 @@ export default function DiseaseDetail() {
       </ul>
 
       {/* Call to Action Section */}
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center shadow-sm">
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center shadow-sm animate-fadeInUp opacity-0 [animation-delay:0.45s]">
         <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3">
           Need Expert Consultation?
         </h3>
@@ -81,9 +81,10 @@ export default function DiseaseDetail() {
           href="/contact"
           className="inline-block bg-blue-600 text-white font-medium px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
         >
-          Contact Us
+          Book Apointment
         </Link>
       </div>
+     
     </div>
   );
 }

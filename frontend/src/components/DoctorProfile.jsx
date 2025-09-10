@@ -1,5 +1,5 @@
-
 import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   FaAward,
   FaHospital,
@@ -15,7 +15,12 @@ export default function DoctorProfile() {
         {/* Row 1 - Doctor Intro */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <h4 className="uppercase tracking-widest text-[#0089FF] font-semibold text-sm mb-2">
               Our Doctor
             </h4>
@@ -32,10 +37,16 @@ export default function DoctorProfile() {
               gastrointestinal surgeries, and patient-centered treatment
               approaches.
             </p>
-          </div>
+          </motion.div>
 
           {/* Right Image with aura effect */}
-          <div className="flex justify-center">
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="rounded-2xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_#0089FF]">
               <Image
                 src="/jain2.png"
@@ -45,13 +56,22 @@ export default function DoctorProfile() {
                 className="w-full h-[500px] object-cover"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Row 2 - Info Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.13 } } }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {/* Biography */}
-          <div className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105">
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } } }}
+            className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105"
+          >
             <h3 className="flex justify-center items-center text-lg font-semibold text-gray-800">
               <FaUserMd className="text-[#0089FF] mr-2" /> Biography
             </h3>
@@ -60,10 +80,12 @@ export default function DoctorProfile() {
               <strong>Specialization:</strong> General & Laparoscopic Surgery <br />
               <strong>Experience:</strong> Over 20+ years in surgical practice
             </p>
-          </div>
-
+          </motion.div>
           {/* Hospital Affiliations */}
-          <div className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105">
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } } }}
+            className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105"
+          >
             <h3 className="flex justify-center items-center text-lg font-semibold text-gray-800">
               <FaHospital className="text-[#0089FF] mr-2" /> Hospital Affiliations
             </h3>
@@ -71,10 +93,12 @@ export default function DoctorProfile() {
               Associated with leading hospitals in Jaipur for advanced general
               and laparoscopic surgeries.
             </p>
-          </div>
-
+          </motion.div>
           {/* Memberships */}
-          <div className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105">
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } } }}
+            className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105"
+          >
             <h3 className="flex justify-center items-center text-lg font-semibold text-gray-800">
               <FaStethoscope className="text-[#0089FF] mr-2" /> Memberships
             </h3>
@@ -89,8 +113,11 @@ export default function DoctorProfile() {
                 HSI (Hernia Society of India)
               </li>
             </ul>
-          </div>
-          <div className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105">
+          </motion.div>
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } } }}
+            className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105"
+          >
             <h3 className="flex justify-center items-center text-lg font-semibold text-gray-800">
               <FaAward className="text-[#0089FF] mr-2" /> Awards & Recognitions
             </h3>
@@ -99,10 +126,12 @@ export default function DoctorProfile() {
               innovations, awarded multiple times for outstanding contribution
               in surgical practice.
             </p>
-          </div>
-
+          </motion.div>
           {/* Philosophy of Care */}
-          <div className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105 sm:col-span-2 lg:col-span-3">
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } } }}
+            className="p-6 bg-white rounded-2xl shadow-md text-center border border-transparent hover:border-[#0089FF] hover:shadow-[0_0_20px_#0089FF] transform transition duration-300 hover:scale-105 sm:col-span-2 lg:col-span-3"
+          >
             <h3 className="flex justify-center items-center text-lg font-semibold text-gray-800">
               <MdWorkspacePremium className="text-[#0089FF] mr-2" /> Philosophy of Care
             </h3>
@@ -111,8 +140,8 @@ export default function DoctorProfile() {
               advanced surgical care with minimal discomfort and faster recovery
               for patients."
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
+
 import React from "react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -21,25 +23,55 @@ const testimonials = [
   },
 ];
 
+
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <motion.section className="py-16 bg-gray-50"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+    >
       <div className="max-w-6xl mx-auto px-4">
         {/* Heading */}
-        <h2 className="text-3xl font-bold text-center mb-2">
+        <motion.h2
+          className="text-3xl font-bold text-center mb-2"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.6 }}
+        >
           What Our{" "}
           <span className="text-[#2563eb] text-4xl">Patients</span> Say
-        </h2>
-        <div className="w-24 h-1 bg-[#2563eb] mx-auto mb-10"></div>
+        </motion.h2>
+        <motion.div
+          className="w-24 h-1 bg-[#2563eb] mx-auto mb-10"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          style={{ originX: 0.5 }}
+        />
 
         {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-3">
+        <motion.div
+          className="grid gap-8 md:grid-cols-3"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.15 } },
+          }}
+        >
           {testimonials.map((testimonial, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="bg-white p-6 rounded-2xl shadow-md text-center border border-transparent
-                         transition-all duration-300 transform hover:scale-105 
-                         hover:border-[#2563eb] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]"
+              className="bg-white p-6 rounded-2xl shadow-md text-center border border-transparent transition-all duration-300 transform hover:scale-105 hover:border-[#2563eb] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]"
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              }}
             >
               <img
                 src={testimonial.image}
@@ -52,11 +84,11 @@ const Testimonials = () => {
               <h4 className="text-lg font-semibold text-gray-800">
                 {testimonial.name}
               </h4>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

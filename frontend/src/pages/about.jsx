@@ -1,5 +1,5 @@
-
 import { useEffect, useState, useRef } from "react";
+import { easeOut, motion } from "framer-motion";
 import Image from "next/image";
 import DoctorProfile from "@/components/DoctorProfile";
 
@@ -14,7 +14,7 @@ const Counter = ({ target, duration }) => {
         if (entry.isIntersecting && !started) {
           setStarted(true);
           let start = 0;
-          const increment = Math.ceil(target / (duration / 50)); 
+          const increment = Math.ceil(target / (duration / 50));
           const interval = setInterval(() => {
             start += increment;
             if (start >= target) {
@@ -40,31 +40,65 @@ const Counter = ({ target, duration }) => {
 
 export default function About() {
   return (
-  <section className="py-20 bg-gray-50 relative overflow-x-clip">
-  <div className="max-w-7xl mx-auto mb-3 px-6 space-y-16">
+    <section className="py-20 bg-gray-50 relative overflow-x-clip">
+      <div className="max-w-7xl mx-auto mb-3 px-6 space-y-16">
         {/* Heading */}
-        <div className="flex flex-col md:flex-col justify-between items-start md:items-start gap-6 mb-10">
+        <motion.div
+          className="flex flex-col md:flex-col justify-between items-start md:items-start gap-6 mb-10"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div>
-            <h4 className="uppercase tracking-widest text-[#0089FF] font-semibold text-sm animate-fadeInUp opacity-0">
+            <motion.h4
+              className="uppercase tracking-widest text-[#0089FF] font-semibold text-sm"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
               About Us
-            </h4>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2 animate-fadeInUp opacity-0 [animation-delay:0.1s]">
-              Dr Amit Bengani Jain is Best General & Laparoscopic <br/>Surgeon in Jaipur
-            </h2>
+            </motion.h4>
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-gray-800 mt-2"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              Dr Amit Bengani Jain is Best General & Laparoscopic <br />Surgeon in Jaipur
+            </motion.h2>
           </div>
-          <p className="text-gray-600 max-w-full animate-fadeInUp opacity-0 [animation-delay:0.2s]">
+          <motion.p
+            className="text-gray-600 max-w-full"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             With over 20+ years of experience and 35,000+ successful surgeries, Dr. Amit Bengani Jain is recognized as the trusted expert in General and Laparoscopic Surgery in Jaipur. He provides advanced, minimally invasive treatments for conditions like hernia, piles, and gallbladder stones with utmost care and precision.
-
+            <br />
             Dr. Amit Bengani Jain and his dedicated medical team are committed to providing compassionate, patient-centered care, ensuring every patient and their loved ones feel protected and informed throughout their surgical journey.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Images with hover aura effect */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12"
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.13 } } }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {["about1.jpg", "about2.jpg", "about3.jpg"].map((img, i) => (
-            <div
+            <motion.div
               key={i}
-              className={`rounded-2xl overflow-hidden shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_0_20px_#0089FF] animate-fadeInScale opacity-0 [animation-delay:${0.2 + i * 0.1}s]`}
+              className="rounded-2xl overflow-hidden shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_0_20px_#0089FF]"
+              variants={{
+                hidden: { opacity: 0, scale: 0.5 },
+                show: { opacity: 1, scale: 1, transition: { duration: 0.8,ease: [0.23, 1, 0.32, 1] } },
+              }}
             >
               <Image
                 src={`/${img}`}
@@ -73,37 +107,42 @@ export default function About() {
                 height={250}
                 className="w-full h-60 object-cover object-top"
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Stats with blue theme */}
-        <div className="flex flex-wrap justify-center gap-8 text-center">
+        <motion.div
+          className="flex flex-wrap justify-center gap-8 text-center"
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.13 } } }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {[
             { target: 35000, label: "Successfull Surgeries", suffix: "+" },
             { target: 22, label: "Surgical Experience", suffix: "+" },
             { target: 1000, label: "Patients Treated", suffix: "+" },
           ].map((item, i) => (
-            <div
+            <motion.div
               key={i}
-              className={`p-6 bg-white rounded-2xl shadow-md border-l-4 border-r-4 border-gray-200 hover:scale-103 hover:border-[#0089FF] transition duration-300 w-64 animate-fadeInUp opacity-0 [animation-delay:${0.3 + i * 0.1}s]`}
+              className="p-6 bg-white rounded-2xl shadow-md border-l-4 border-r-4 border-gray-200 hover:scale-103 hover:border-[#0089FF] transition duration-300 w-64"
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } },
+              }}
             >
               <h3 className="text-4xl font-bold text-gray-800">
                 <Counter target={item.target} duration={2000} />
                 {item.suffix || ""}
               </h3>
               <p className="text-gray-600 mt-2">{item.label}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-
-
+        </motion.div>
       </div>
-
       {/* Doctor Profile Section */}
       <DoctorProfile />
-
-     
     </section>
   );
 }

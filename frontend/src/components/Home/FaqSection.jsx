@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const FaqSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -32,17 +33,43 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-12 px-6 md:px-12 lg:px-20">
+    <section className="bg-gray-50 py-12 px-6 md:px-12 lg:px-20 overflow-x-hidden">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
+        <motion.h2
+          className="text-3xl font-bold text-center mb-8 text-gray-900"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           Frequently Asked Questions
-        </h2>
+        </motion.h2>
 
-        <div className="space-y-4">
+        <motion.div
+          className="space-y-4"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.13 } },
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
               className="border border-gray-200 rounded-xl shadow-sm overflow-hidden"
+              variants={{
+                hidden: { opacity: 0, x: 40 },
+                show: {
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    duration: 0.6,
+                    ease: [0.23, 1, 0.32, 1],
+                  },
+                },
+              }}
             >
               {/* Question Row */}
               <button
@@ -63,9 +90,9 @@ const FaqSection = () => {
               >
                 <p className="text-gray-700">{faq.answer}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* ✅ Schema for SEO */}

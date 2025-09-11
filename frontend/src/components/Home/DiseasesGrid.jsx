@@ -25,7 +25,7 @@ const gridItem = {
 
 const DiseasesGrid = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 overflow-x-hidden">
       <div className="max-w-6xl mx-auto px-6">
         {/* Title */}
         <motion.h2

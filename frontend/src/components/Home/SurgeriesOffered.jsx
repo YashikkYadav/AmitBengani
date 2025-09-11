@@ -40,7 +40,7 @@ export default function SurgeriesOffered() {
   }));
 
   return (
-    <section className="py-16 bg-gray-50" id="surgeries">
+    <section className="py-16 bg-gray-50 overflow-x-hidden" id="surgeries">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
 

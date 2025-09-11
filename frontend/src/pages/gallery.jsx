@@ -1,5 +1,7 @@
+
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const galleryData = {
   opd: [
@@ -27,17 +29,47 @@ export default function GalleryPage() {
   const [activeTab, setActiveTab] = useState("opd");
 
   return (
-    <section className="bg-gray-100 py-12 mb-10">
+    <motion.section className="bg-gray-100 py-12 mb-10"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 text-center mb-10">
-        <h1 className="text-4xl font-bold text-gray-800 animate-fadeInUp opacity-0">Gallery & Media</h1>
-        <p className="text-gray-600 mt-2 animate-fadeInUp opacity-0 [animation-delay:0.1s]">
+      <motion.div
+        className="max-w-7xl mx-auto px-6 text-center mb-10"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.7 }}
+        transition={{ duration: 0.7 }}
+      >
+        <motion.h1
+          className="text-4xl font-bold text-gray-800"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.5 }}
+        >
+          Gallery & Media
+        </motion.h1>
+        <motion.p
+          className="text-gray-600 mt-2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           Explore our work, events, and real patient transformations.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       {/* Tabs */}
-      <div className="flex justify-center gap-4 mb-10 animate-fadeInUp opacity-0 [animation-delay:0.2s]">
+      <motion.div
+        className="flex justify-center gap-4 mb-10"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.7 }}
+        transition={{ duration: 0.6 }}
+      >
         {[
           { key: "opd", label: "Doctor in OPD / Surgery" },
           { key: "events", label: "Certifications" },
@@ -55,14 +87,27 @@ export default function GalleryPage() {
             {tab.label}
           </button>
         ))}
-      </div>
+      </motion.div>
 
       {/* Gallery Grid */}
-      <div className="max-w-7xl  mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fadeInUp opacity-0 [animation-delay:0.3s]">
+      <motion.div
+        className="max-w-7xl  mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-6"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.13 } },
+        }}
+      >
         {galleryData[activeTab].map((img, index) => (
-          <div
+          <motion.div
             key={index}
-            className={`relative group rounded-xl overflow-hidden shadow hover:shadow-lg border-2 border-transparent hover:border-[#0089FF] transition bg-white animate-fadeInScale opacity-0 [animation-delay:${0.4 + index * 0.07}s]`}
+            className="relative group rounded-xl overflow-hidden shadow hover:shadow-lg border-2 border-transparent hover:border-[#0089FF] transition bg-white"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.07 }}
           >
             <img
               src={img}
@@ -70,9 +115,9 @@ export default function GalleryPage() {
               className="w-full rounded-xl h-60 object-cover object-top transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 transition"></div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

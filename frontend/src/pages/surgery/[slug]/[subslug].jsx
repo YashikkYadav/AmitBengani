@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { servicesData } from "@/data/servicesData";
 import { FaQuestionCircle, FaClipboardList, FaHeartbeat } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function SubSurgeryDetail() {
   const router = useRouter();
@@ -36,7 +37,13 @@ export default function SubSurgeryDetail() {
 
   // Helper function to render list sections
   const renderSection = (title, items, color) => (
-    <section className="my-12">
+    <motion.section
+      className="my-12"
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <h2 className={`text-2xl md:text-3xl font-bold text-gray-900 mb-6 border-l-4 pl-4 ${color}`}>
         {title}
       </h2>
@@ -45,39 +52,97 @@ export default function SubSurgeryDetail() {
           <li key={idx}>{item}</li>
         ))}
       </ul>
-    </section>
+    </motion.section>
   );
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-12">
+    <section className="max-w-5xl mx-auto px-6 py-12 overflow-x-hidden">
       {/* Heading & Description */}
       <div className="mb-12">
-        <h1 className="text-4xl text-center md:text-4xl font-extrabold text-gray-900 animate-fadeInUp opacity-0">
+        <motion.h1
+          className="text-4xl text-center md:text-4xl font-extrabold text-gray-900"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {subSurgery.name}
-        </h1>
-        <div className="mt-3 w-20 h-1 bg-blue-600 mx-auto rounded-full animate-fadeInUp opacity-0 [animation-delay:0.1s]" />
-        <p className="mt-6 text-center text-lg md:text-xl text-gray-600 leading-relaxed animate-fadeInUp opacity-0 [animation-delay:0.2s]">
+        </motion.h1>
+        <motion.div
+          className="mt-3 w-20 h-1 bg-blue-600 mx-auto rounded-full"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.2 }}
+        />
+        <motion.p
+          className="mt-6 text-center text-lg md:text-xl text-gray-600 leading-relaxed"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {subSurgery.description}
-        </p>
+        </motion.p>
       </div>
 
       {/* Info Cards */}
-      <div className="grid md:grid-cols-3 gap-6 mb-12 animate-fadeInUp opacity-0 [animation-delay:0.3s]">
+      <motion.div
+        className="grid md:grid-cols-3 gap-6 mb-12"
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.18 } } }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {cards.map((card, idx) => (
-          <div
+          <motion.div
             key={idx}
+            variants={{
+              hidden: { opacity: 0, y: 40,scale:0.20 },
+              show: { opacity: 1, y: 0,scale:1, transition: { duration: 0.7, ease: [0.23, 1, 0.32, 1] } },
+            }}
             className={`bg-white shadow-lg rounded-2xl p-6 border border-gray-200
                        hover:border-blue-500 hover:shadow-xl hover:shadow-blue-100
-                       transform hover:-translate-y-1 transition-all duration-300 animate-fadeInScale opacity-0 [animation-delay:${0.4 + idx * 0.07}s]`}
+                       transform hover:-translate-y-1 transition-all duration-300`}
           >
             <div className="flex items-center gap-3 mb-4">
               {card.icon}
               <h2 className="text-xl font-semibold">{card.title}</h2>
             </div>
             <p className="text-gray-600">{card.content}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
 
       {/* Optional Sections */}
       {subSurgery.isItCorrectForYou &&
@@ -86,8 +151,13 @@ export default function SubSurgeryDetail() {
         renderSection("Benefits", subSurgery.benefits, "border-blue-500")}
       {subSurgery.challenges &&
         renderSection("Challenges", subSurgery.challenges, "border-red-500")}
-
-         <div className="mt-16 bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+      <motion.div
+        className="mt-16 bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           Contact Details
         </h2>
@@ -104,7 +174,7 @@ export default function SubSurgeryDetail() {
           visit our clinic. Our experienced team is committed to providing
           expert surgical care with personalized attention.
         </p>
-      </div>
+      </motion.div>
     </section>
   );
 }

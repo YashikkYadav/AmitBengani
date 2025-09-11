@@ -28,7 +28,7 @@ const WhyChoose = () => {
   ];
 
   return (
-    <motion.section className="py-16 bg-gray-50"
+    <motion.section className="py-16 bg-gray-50 overflow-x-hidden"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}

@@ -43,7 +43,7 @@ const rightVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-r from-[#E6F3FF] via-[#CCE9FF] to-[#99D0FF]">
+    <section className="relative bg-gradient-to-r overflow-x-hidden from-[#E6F3FF] via-[#CCE9FF] to-[#99D0FF]">
       <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 items-center gap-12">
         {/* Left Content */}
         <motion.div

@@ -120,9 +120,8 @@ export default function About() {
           viewport={{ once: true, amount: 0.2 }}
         >
           {[
-            { target: 35000, label: "Successfull Surgeries", suffix: "+" },
-            { target: 22, label: "Surgical Experience", suffix: "+" },
-            { target: 1000, label: "Patients Treated", suffix: "+" },
+            { target: 20000, label: "Successfull Surgeries", suffix: "+" },
+            { target: 20, label: "Surgical Experience", suffix: "+" },
           ].map((item, i) => (
             <motion.div
               key={i}

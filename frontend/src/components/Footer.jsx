@@ -112,7 +112,7 @@ export default function Footer() {
               href="mailto:dramitbenganisocial@gmail.com"
               className="flex items-center gap-2 md:justify-start hover:text-[#0089FF] transition"
             >
-              <FaEnvelope className="text-[#0089FF] text-lg" /> dramitbenganisocial@gmail.com
+              <FaEnvelope className="text-[#0089FF] text-lg" />dramitbengani@yahoo.co.in 
             </a>
           </div>
         </motion.div>

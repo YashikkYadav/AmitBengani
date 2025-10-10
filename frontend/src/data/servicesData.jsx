@@ -880,69 +880,69 @@ export const servicesData = [
 
   ]
 },
-{
-  id: 9,
-  category: "liver-spleen-pancreas-surgeries",
-  name: "Liver, Spleen & Pancreas Surgeries",
-  description: "Liver, spleen, and pancreas surgeries are specialized procedures performed to treat a range of conditions affecting these vital organs in the abdomen. These surgeries may involve removing tumors, cysts, or damaged tissue from the liver, treating an enlarged or injured spleen, or addressing problems such as cancer, chronic inflammation, or cysts in the pancreas. At our center, we focus on providing safe, advanced surgical care that helps restore health, reduce pain, and improve recovery. Using modern techniques such as laparoscopic and robotic surgery, our team works to minimize scars, lower risks, and support patients in getting back to normal life as quickly as possible.",
-  subSurgeries: [
-    {
-  slug: "laparoscopic-splenectomy",
-  name: "Laparoscopic Splenectomy",
-  description: "Laparoscopic splenectomy is a minimally invasive surgical procedure to remove the spleen using small incisions and a laparoscope (camera). It is often performed to treat conditions such as splenic rupture, certain blood disorders, or enlargement of the spleen (splenomegaly). Compared to open splenectomy, the laparoscopic approach offers reduced postoperative pain, shorter hospital stays, and quicker recovery.",
-  details: {
-    whenNeeded: "Performed when the spleen is damaged, enlarged, ruptured due to trauma, or in cases of blood disorders like idiopathic thrombocytopenic purpura (ITP), hereditary spherocytosis, or certain cancers.",
-    preparation: "Vaccinations against infections (pneumococcal, meningococcal, Haemophilus influenzae type b) are given before surgery. Preoperative blood tests and imaging (CT/ultrasound) are conducted. Fasting for 6-8 hours before surgery is required.",
-    rehabilitation: "Hospital stay usually 1–3 days. Return to normal activities in 2–3 weeks. Long-term, patients may need regular vaccinations and preventive antibiotics due to increased infection risk after spleen removal."
-  },
-  isItCorrectForYou: [
-    "You have a damaged or ruptured spleen due to trauma.",
-    "You suffer from blood disorders like ITP or hereditary spherocytosis.",
-    "Your spleen is enlarged and causing complications.",
-    "Doctors have recommended spleen removal for cancer-related conditions."
-  ],
-  benefits: [
-    "Minimally invasive with smaller incisions and faster recovery.",
-    "Reduced postoperative pain compared to open surgery.",
-    "Shorter hospital stay and quicker return to daily activities.",
-    "Better cosmetic outcome with minimal scarring."
-  ],
-  challenges: [
-    "Risk of bleeding or injury to nearby organs (stomach, pancreas, colon).",
-    "Increased lifelong risk of infections due to absence of spleen.",
-    "Possible complications like pneumonia, abscess, or blood clots.",
-    "Requires general anesthesia."
-  ]
-}
-,
-    {
-  slug: "liver-abscess-drainage",
-  name: "Liver Abscess Drainage",
-  description: "Liver abscess drainage is a surgical or minimally invasive procedure performed to remove pus-filled cavities in the liver caused by infection. It helps relieve pain, fever, and prevents life-threatening complications such as rupture or sepsis.",
-  details: {
-    whenNeeded: "Recommended when a liver abscess is large, painful, or not responding to antibiotics.",
-    preparation: "Blood tests, ultrasound or CT scan to locate the abscess, fasting 6-8 hours before procedure.",
-    rehabilitation: "Hospital stay for a few days, with gradual recovery over 1-2 weeks depending on infection control."
-  },
-  isItCorrectForYou: [
-    "You have persistent fever and abdominal pain due to a liver abscess.",
-    "Antibiotics alone are not effective.",
-    "Imaging confirms a drainable collection."
-  ],
-  benefits: [
-    "Relieves symptoms quickly.",
-    "Prevents rupture and spread of infection.",
-    "Minimally invasive options available using guided catheter drainage."
-  ],
-  challenges: [
-    "Risk of bleeding or infection at the drain site.",
-    "Abscess may recur if infection is not fully cleared.",
-    "Requires careful monitoring and antibiotics."
-  ]
-},
+// {
+//   id: 9,
+//   category: "liver-spleen-pancreas-surgeries",
+//   name: "Liver, Spleen & Pancreas Surgeries",
+//   description: "Liver, spleen, and pancreas surgeries are specialized procedures performed to treat a range of conditions affecting these vital organs in the abdomen. These surgeries may involve removing tumors, cysts, or damaged tissue from the liver, treating an enlarged or injured spleen, or addressing problems such as cancer, chronic inflammation, or cysts in the pancreas. At our center, we focus on providing safe, advanced surgical care that helps restore health, reduce pain, and improve recovery. Using modern techniques such as laparoscopic and robotic surgery, our team works to minimize scars, lower risks, and support patients in getting back to normal life as quickly as possible.",
+//   subSurgeries: [
+//     {
+//   slug: "laparoscopic-splenectomy",
+//   name: "Laparoscopic Splenectomy",
+//   description: "Laparoscopic splenectomy is a minimally invasive surgical procedure to remove the spleen using small incisions and a laparoscope (camera). It is often performed to treat conditions such as splenic rupture, certain blood disorders, or enlargement of the spleen (splenomegaly). Compared to open splenectomy, the laparoscopic approach offers reduced postoperative pain, shorter hospital stays, and quicker recovery.",
+//   details: {
+//     whenNeeded: "Performed when the spleen is damaged, enlarged, ruptured due to trauma, or in cases of blood disorders like idiopathic thrombocytopenic purpura (ITP), hereditary spherocytosis, or certain cancers.",
+//     preparation: "Vaccinations against infections (pneumococcal, meningococcal, Haemophilus influenzae type b) are given before surgery. Preoperative blood tests and imaging (CT/ultrasound) are conducted. Fasting for 6-8 hours before surgery is required.",
+//     rehabilitation: "Hospital stay usually 1–3 days. Return to normal activities in 2–3 weeks. Long-term, patients may need regular vaccinations and preventive antibiotics due to increased infection risk after spleen removal."
+//   },
+//   isItCorrectForYou: [
+//     "You have a damaged or ruptured spleen due to trauma.",
+//     "You suffer from blood disorders like ITP or hereditary spherocytosis.",
+//     "Your spleen is enlarged and causing complications.",
+//     "Doctors have recommended spleen removal for cancer-related conditions."
+//   ],
+//   benefits: [
+//     "Minimally invasive with smaller incisions and faster recovery.",
+//     "Reduced postoperative pain compared to open surgery.",
+//     "Shorter hospital stay and quicker return to daily activities.",
+//     "Better cosmetic outcome with minimal scarring."
+//   ],
+//   challenges: [
+//     "Risk of bleeding or injury to nearby organs (stomach, pancreas, colon).",
+//     "Increased lifelong risk of infections due to absence of spleen.",
+//     "Possible complications like pneumonia, abscess, or blood clots.",
+//     "Requires general anesthesia."
+//   ]
+// }
+// ,
+//     {
+//   slug: "liver-abscess-drainage",
+//   name: "Liver Abscess Drainage",
+//   description: "Liver abscess drainage is a surgical or minimally invasive procedure performed to remove pus-filled cavities in the liver caused by infection. It helps relieve pain, fever, and prevents life-threatening complications such as rupture or sepsis.",
+//   details: {
+//     whenNeeded: "Recommended when a liver abscess is large, painful, or not responding to antibiotics.",
+//     preparation: "Blood tests, ultrasound or CT scan to locate the abscess, fasting 6-8 hours before procedure.",
+//     rehabilitation: "Hospital stay for a few days, with gradual recovery over 1-2 weeks depending on infection control."
+//   },
+//   isItCorrectForYou: [
+//     "You have persistent fever and abdominal pain due to a liver abscess.",
+//     "Antibiotics alone are not effective.",
+//     "Imaging confirms a drainable collection."
+//   ],
+//   benefits: [
+//     "Relieves symptoms quickly.",
+//     "Prevents rupture and spread of infection.",
+//     "Minimally invasive options available using guided catheter drainage."
+//   ],
+//   challenges: [
+//     "Risk of bleeding or infection at the drain site.",
+//     "Abscess may recur if infection is not fully cleared.",
+//     "Requires careful monitoring and antibiotics."
+//   ]
+// },
   
-  ]
-},
+//   ]
+// },
   {
   id: 10,
   category: "other-surgeries",

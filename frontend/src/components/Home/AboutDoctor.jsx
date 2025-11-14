@@ -97,7 +97,7 @@ const AboutDoctor = () => {
         <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> 20+ years in advanced surgical care
       </motion.li>
       <motion.li className="flex items-start" variants={listItem}>
-        <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Performed 35,000+ successful procedures
+        <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Performed 20,000+ successful procedures
       </motion.li>
       <motion.li className="flex items-start" variants={listItem}>
         <FaCheckCircle className="text-[#0089FF] mr-2 mt-1" /> Renowned in Basic and Advanced laparoscopic surgeries

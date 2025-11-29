@@ -2,12 +2,17 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import diseasesData from "@/data/diseasesData";
 import { motion } from "framer-motion";
+import Head from "next/head";
+import { getSEOMetadata } from '@/utils/seoUtils';
 
 export default function DiseaseDetail() {
   const router = useRouter();
   const { slug } = router.query;
 
   const disease = diseasesData[slug];
+  
+  // Get SEO metadata for this treatment page
+  const seoData = getSEOMetadata(`/treatments/${slug}`);
 
   if (!disease) {
     return <h1 className="text-center py-20 text-xl">Condition not found</h1>;
@@ -19,17 +24,25 @@ export default function DiseaseDetail() {
     : [disease.description];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 overflow-x-hidden">
-      {/* Title */}
-      <motion.h1
-        className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center md:text-left"
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        {disease.title}
-      </motion.h1>
+    <>
+      <Head>
+        <title>{seoData?.title || `${disease.title} | Dr Amit Bengani`}</title>
+        <meta name="description" content={seoData?.description || `Learn about ${disease.title.toLowerCase()} treatment options by Dr. Amit Bengani, a leading general and laparoscopic surgeon in Jaipur.`} />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <link rel="canonical" href={`https://dramitbenganijain.com/treatments/${slug}`} />
+      </Head>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 overflow-x-hidden">
+        {/* Title */}
+        <motion.h1
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center md:text-left"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {disease.title}
+        </motion.h1>
 
       {/* Description + Image */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-10">
@@ -147,5 +160,6 @@ export default function DiseaseDetail() {
         </Link>
       </motion.div>
     </div>
+    </>
   );
 }

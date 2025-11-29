@@ -6,10 +6,22 @@ import SurgeryActivities from '@/components/Home/Article';
 import TestimonialCarousel from '@/components/Home/TestimonialCarousel';
 import FaqSection from '@/components/Home/FaqSection';
 import WhyChoose from '@/components/Home/WhyChoose';
+import Head from 'next/head';
+import { getSEOMetadata } from '@/utils/seoUtils';
 
 const Home = () => {
+  const seoData = getSEOMetadata('/');
+  
   return (
     <>
+      <Head>
+        <title>{seoData?.title || 'Best General & Laparoscopic Surgeon in Jaipur | Dr Amit Bengani'}</title>
+        <meta name="description" content={seoData?.description || 'Discover the leading general & laparoscopic surgeon in Jaipur. Get personalized care, advanced techniques, and a focus on quick, smooth recovery.'} />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="google-site-verification" content="NdJIqqzblQF1uoaWxQ5KdCYpXWte0a1vdUVKAbY-Kxw" />
+        <link rel="canonical" href="https://dramitbenganijain.com/" />
+      </Head>
       <Hero/>
       <AboutDoctor/>
       <DiseasesGrid/>

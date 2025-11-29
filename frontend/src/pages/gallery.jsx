@@ -13,12 +13,17 @@ const galleryData = {
     "/gallery/story5.jpg",
     "/gallery/story6.jpg",
   ],
+  reviews: [
+    "/gallery/review1.jpg",
+    "/gallery/review2.jpg",
+  ],
 };
 
 const tabs = [
   { key: "opd", label: "Doctor in OPD / Surgery" },
   { key: "events", label: "Certifications" },
   { key: "stories", label: "Before-After Stories" },
+  { key: "reviews", label: "Reviews/Feedback" },
 ];
 
 // Reusable animation configs
@@ -92,23 +97,30 @@ export default function GalleryPage() {
           show: { transition: { staggerChildren: 0.13 } },
         }}
       >
-        {galleryData[activeTab].map((img, index) => (
-          <motion.div
-            key={img}
-            className="relative group rounded-xl overflow-hidden shadow hover:shadow-lg border-2 border-transparent hover:border-[#0089FF] transition bg-white"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.07 }}
-          >
-            <img
-              src={img}
-              alt="Gallery"
-              className="w-full rounded-xl h-60 object-cover object-top transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 transition" />
-          </motion.div>
-        ))}
+       {galleryData[activeTab].map((img, index) => (
+  <motion.div
+    key={img}
+    className="relative group rounded-xl shadow hover:shadow-lg border-2 border-transparent hover:border-[#0089FF] transition bg-white overflow-hidden"
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.5, delay: index * 0.07 }}
+  >
+    <img
+      src={img}
+      alt="Gallery"
+      className="
+        w-full rounded-xl 
+        h-60 object-cover object-top 
+        transition-all duration-300
+        group-hover:h-auto             
+        group-hover:object-contain      
+        group-hover:scale-100           
+      "
+    />
+  </motion.div>
+))}
+
       </motion.div>
     </motion.section>
   );

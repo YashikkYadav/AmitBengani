@@ -5,6 +5,8 @@ import whatToExpectData from "@/data/expectData";
 import WhatToExpect from "@/components/WhatToExpect";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Head from "next/head";
+import { getSEOMetadata, getFallbackSEOMetadata } from '@/utils/seoUtils';
 
 export default function SurgeryDetail() {
   const { query } = useRouter();
@@ -13,6 +15,9 @@ export default function SurgeryDetail() {
   const surgeryCategory = servicesData.find(
     (s) => s.category === slug
   );
+  
+  // Get SEO metadata for this surgery category page
+  const seoData = getSEOMetadata(`/surgeries/${slug}`) || getFallbackSEOMetadata('/surgeries');
 
   if (!surgeryCategory) {
     return (
@@ -23,19 +28,27 @@ export default function SurgeryDetail() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-x-hidden">
-      {/* Title */}
-      <motion.h1
-        className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 text-center md:text-left mb-6"
-        initial={{ opacity: 0, x: -60 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <span className="bg-gradient-to-r from-[#0089FF] to-blue-400 bg-clip-text text-transparent">
-          {surgeryCategory.name}
-        </span>
-      </motion.h1>
+    <>
+      <Head>
+        <title>{seoData?.title || `${surgeryCategory.name} | Dr Amit Bengani`}</title>
+        <meta name="description" content={seoData?.description || `Learn about ${surgeryCategory.name.toLowerCase()} procedures by Dr. Amit Bengani, a leading general and laparoscopic surgeon in Jaipur.`} />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <link rel="canonical" href={`https://dramitbenganijain.com/surgeries/${slug}`} />
+      </Head>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-x-hidden">
+        {/* Title */}
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 text-center md:text-left mb-6"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <span className="bg-gradient-to-r from-[#0089FF] to-blue-400 bg-clip-text text-transparent">
+            {surgeryCategory.name}
+          </span>
+        </motion.h1>
 
       {/* Description */}
       <motion.p
@@ -124,6 +137,7 @@ export default function SurgeryDetail() {
         </p>
       </motion.div>
     </div>
+    </>
   );
 }
 

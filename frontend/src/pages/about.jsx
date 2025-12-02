@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import { easeOut, motion } from "framer-motion";
 import Image from "next/image";
 import DoctorProfile from "@/components/DoctorProfile";
+import Head from "next/head";
+import { getSEOMetadata } from '@/utils/seoUtils';
 
 const Counter = ({ target, duration }) => {
   const [count, setCount] = useState(0);
@@ -39,9 +41,19 @@ const Counter = ({ target, duration }) => {
 };
 
 export default function About() {
+  const seoData = getSEOMetadata('/about');
+  
   return (
-    <section className="py-20 bg-gray-50 relative overflow-x-clip">
-      <div className="max-w-7xl mx-auto mb-3 px-6 space-y-16">
+    <>
+      <Head>
+        <title>{seoData?.title || 'Dr. Amit Bengani Jain | Best General & Laparoscopic Surgeon in Jaipur'}</title>
+        <meta name="description" content={seoData?.description || 'Meet Dr. Amit Bengani Jain, the top general & laparoscopic surgeon in Jaipur. Offering expert care and advanced treatments to ensure your health and well-being.'} />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <link rel="canonical" href="https://dramitbenganijain.com/about" />
+      </Head>
+      <section className="py-20 bg-gray-50 relative overflow-x-clip">
+        <div className="max-w-7xl mx-auto mb-3 px-6 space-y-16">
         {/* Heading */}
         <motion.div
           className="flex flex-col md:flex-col justify-between items-start md:items-start gap-6 mb-10"
@@ -143,5 +155,6 @@ export default function About() {
       {/* Doctor Profile Section */}
       <DoctorProfile />
     </section>
+    </>
   );
 }

@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { servicesData } from "@/data/servicesData";
 import { FaQuestionCircle, FaClipboardList, FaHeartbeat } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Head from "next/head";
+import { getSEOMetadata, getFallbackSEOMetadata } from '@/utils/seoUtils';
 
 export default function SubSurgeryDetail() {
   const router = useRouter();
@@ -16,6 +18,9 @@ export default function SubSurgeryDetail() {
 
   const subSurgery = categoryData.subSurgeries.find((s) => s.slug === subslug);
   if (!subSurgery) return <h1 className="text-center py-20 text-xl">Sub-surgery not found</h1>;
+  
+  // Get SEO metadata for this specific surgery page
+  const seoData = getSEOMetadata(`/surgery/${slug}/${subslug}`) || getFallbackSEOMetadata('/surgery');
 
   const cards = [
     {
@@ -56,18 +61,26 @@ export default function SubSurgeryDetail() {
   );
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-12 overflow-x-hidden">
-      {/* Heading & Description */}
-      <div className="mb-12">
-        <motion.h1
-          className="text-4xl text-center md:text-4xl font-extrabold text-gray-900"
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {subSurgery.name}
-        </motion.h1>
+    <>
+      <Head>
+        <title>{seoData?.title || `${subSurgery.name} | Dr Amit Bengani`}</title>
+        <meta name="description" content={seoData?.description || `Learn about ${subSurgery.name.toLowerCase()} procedure by Dr. Amit Bengani, a leading general and laparoscopic surgeon in Jaipur.`} />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <link rel="canonical" href={`https://dramitbenganijain.com/surgery/${slug}/${subslug}`} />
+      </Head>
+      <section className="max-w-5xl mx-auto px-6 py-12 overflow-x-hidden">
+        {/* Heading & Description */}
+        <div className="mb-12">
+          <motion.h1
+            className="text-4xl text-center md:text-4xl font-extrabold text-gray-900"
+            initial={{ opacity: 0, y: -40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {subSurgery.name}
+          </motion.h1>
         <motion.div
           className="mt-3 w-20 h-1 bg-blue-600 mx-auto rounded-full"
           initial={{ opacity: 0, y: -20 }}
@@ -176,5 +189,6 @@ export default function SubSurgeryDetail() {
         </p>
       </motion.div>
     </section>
+    </>
   );
 }

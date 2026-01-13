@@ -4,8 +4,7 @@ import Image from "next/image";
 const BlogCard = ({ post }) => {
   // Extract image URL from Yoast data or featured media
 
-  const imageUrl = post?._embedded["wp:featuredmedia"][0].source_url;
-  console.log("BlogCard imageUrl:", imageUrl);
+  const imageUrl = post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
   // Format the date safely
   const formattedDate = post?.date

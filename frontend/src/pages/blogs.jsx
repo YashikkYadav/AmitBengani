@@ -17,8 +17,9 @@ export default function Blogs() {
     async function fetchPosts() {
       try {
         // Fetch posts for current page
+
         const res = await fetch(
-          `${wordpressApiUrl}?page=${currentPage}&per_page=${postsPerPage}`,
+          `${wordpressApiUrl}?page=${currentPage}&per_page=${postsPerPage}&_embed`,
           {
             next: { revalidate: 60 },
           }
@@ -36,6 +37,7 @@ export default function Blogs() {
         setTotalPages(totalPagesHeader ? parseInt(totalPagesHeader, 10) : 1);
 
         const data = await res.json();
+        console.log("Fetched posts:", data);
         setPosts(data);
       } catch (err) {
         setError(err.message);

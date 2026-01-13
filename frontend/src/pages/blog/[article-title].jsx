@@ -18,14 +18,14 @@ export default function BlogDetails() {
     async function fetchPost() {
       try {
         // First, we need to get all posts to find the one with the matching slug
-        const res = await fetch(`${wordpressApiUrl}?slug=${slug}`);
+        const res = await fetch(`${wordpressApiUrl}?slug=${slug}&_embed`);
 
         if (!res.ok) {
           throw new Error("Failed to fetch post");
         }
 
         const data = await res.json();
-
+        console.log("Fetched post data:", data);
         if (data.length > 0) {
           setPost(data[0]);
         } else {
@@ -90,8 +90,7 @@ export default function BlogDetails() {
   }
 
   // Extract image URL from Yoast SEO data if available
-  const imageUrl =
-    post?.yoast_head_json?.og_image?.[0]?.url || "/default-blog-image.jpg";
+  const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
 
   // Format date
   const formattedDate = post?.date
@@ -144,7 +143,7 @@ export default function BlogDetails() {
         )}
       </Head>
 
-      <div className="max-w-4xl mx-auto py-12 px-6">
+      <div className="max-w-full mx-auto py-12 px-6">
         <h1
           className="text-4xl font-bold text-gray-800 mb-4 animate-fadeInUp opacity-0"
           dangerouslySetInnerHTML={{ __html: post.title.rendered }}
@@ -158,7 +157,7 @@ export default function BlogDetails() {
           <img
             src={imageUrl}
             alt={post.title.rendered}
-            className="w-full h-80 object-cover rounded-lg mb-6 animate-fadeInScale opacity-0 [animation-delay:0.2s]"
+            className="w-full h-auto object-cover rounded-lg mb-6 animate-fadeInScale opacity-0 [animation-delay:0.2s]"
           />
         )}
 

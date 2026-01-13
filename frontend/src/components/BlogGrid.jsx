@@ -3,11 +3,9 @@ import Image from "next/image";
 
 const BlogCard = ({ post }) => {
   // Extract image URL from Yoast data or featured media
-  const imageUrl =
-    post?.yoast_head_json?.og_image?.[0]?.url ||
-    post?.jetpack_featured_media_url ||
-    post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-    "/dummyblog.jpg";
+
+  const imageUrl = post?._embedded["wp:featuredmedia"][0].source_url;
+  console.log("BlogCard imageUrl:", imageUrl);
 
   // Format the date safely
   const formattedDate = post?.date
@@ -27,11 +25,8 @@ const BlogCard = ({ post }) => {
             src={imageUrl}
             alt={post?.title?.rendered || "Blog Image"}
             fill
-            className="object-cover"
+            className="w-full h-auto object-cover mx-auto"
             unoptimized
-            sizes="(max-width: 768px) 100vw,
-                   (max-width: 1200px) 50vw,
-                   33vw"
             onError={(e) => {
               // Fallback to default image on error
               e.target.src = "/dummyblog.jpg";
